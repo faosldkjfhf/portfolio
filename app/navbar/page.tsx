@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function NavBar(): React.ReactElement {
   const [defaultPos, setDefaultPos] = useState(true);
+  const [show, setShow] = useState("");
   return (
     <div className={`${defaultPos ? "center" : "top"}`}>
       <div
@@ -24,12 +25,22 @@ export default function NavBar(): React.ReactElement {
         >
           About
         </div>
-        <Link className="button" href="/">
+        <div
+          className="button cursor-pointer"
+          onClick={() => {
+            setDefaultPos(false);
+          }}
+        >
           Projects
-        </Link>
-        <Link className="button" href="/">
+        </div>
+        <div
+          className="button cursor-pointer"
+          onClick={() => {
+            setDefaultPos(false);
+          }}
+        >
           Photos
-        </Link>
+        </div>
       </nav>
     </div>
   );

@@ -18,3 +18,24 @@ body {
     background-position: 0% 50%;
   }
 }
+
+@keyframes slide-up-item {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(15%);
+  }
+}
+
+.item {
+  @apply mt-4;
+  @apply transition-transform;
+  @apply duration-300;
+  animation: slide-up-item 1s;
+  border-color: rgba(255, 255, 255, 0);
+  @apply border-2;
+  @apply rounded-md;
+  background: rgba(255, 255, 255, 0.3);
+  height: 60vh;
+}
