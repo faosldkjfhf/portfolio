@@ -1,7 +1,7 @@
 export default function Photos() {
   return (
     <main>
-      <div>Hi</div>
+      <div>Photos</div>
     </main>
   );
 }

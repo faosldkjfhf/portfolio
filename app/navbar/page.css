@@ -1,6 +1,6 @@
 @keyframes slide-up {
   from {
-    transform: translateY(40%);
+    transform: translateY(150%);
   }
   to {
     transform: translateY(10%);
@@ -9,7 +9,7 @@
 
 @keyframes slide-down {
   from {
-    transform: translateY(-30%);
+    transform: translateY(-35%);
   }
   to {
     transform: translateY(0%);

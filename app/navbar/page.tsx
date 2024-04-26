@@ -1,17 +1,21 @@
 "use client";
 import Link from "next/link";
 import "./page.css";
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 
-export default function NavBar(): React.ReactElement {
+type IProps = {
+  setSelected: Dispatch<SetStateAction<string>>;
+};
+
+export default function NavBar(props: IProps): React.ReactElement {
   const [defaultPos, setDefaultPos] = useState(true);
-  const [show, setShow] = useState("");
   return (
     <div className={`${defaultPos ? "center" : "top"}`}>
       <div
         className="text-[8rem] leading-[8rem] font-bold button cursor-pointer border-b-2"
         onClick={() => {
           setDefaultPos(true);
+          props.setSelected("");
         }}
       >
         Kevin Liu
@@ -21,6 +25,7 @@ export default function NavBar(): React.ReactElement {
           className="button cursor-pointer"
           onClick={() => {
             setDefaultPos(false);
+            props.setSelected("about");
           }}
         >
           About
@@ -29,6 +34,7 @@ export default function NavBar(): React.ReactElement {
           className="button cursor-pointer"
           onClick={() => {
             setDefaultPos(false);
+            props.setSelected("projects");
           }}
         >
           Projects
@@ -37,6 +43,7 @@ export default function NavBar(): React.ReactElement {
           className="button cursor-pointer"
           onClick={() => {
             setDefaultPos(false);
+            props.setSelected("photos");
           }}
         >
           Photos

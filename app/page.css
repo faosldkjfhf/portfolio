@@ -33,9 +33,9 @@ body {
   @apply transition-transform;
   @apply duration-300;
   animation: slide-up-item 1s;
-  border-color: rgba(255, 255, 255, 0);
-  @apply border-2;
   @apply rounded-md;
-  background: rgba(255, 255, 255, 0.3);
+  /*@apply border-2;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0);*/
   height: 60vh;
 }
