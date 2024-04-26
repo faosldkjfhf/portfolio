@@ -2,9 +2,9 @@
 import "./page.css";
 import { useState, Dispatch, SetStateAction } from "react";
 
-type IProps = {
+interface IProps {
   setSelected: Dispatch<SetStateAction<string>>;
-};
+}
 
 function NavBar(props: IProps): React.ReactElement {
   const [defaultPos, setDefaultPos] = useState(true);

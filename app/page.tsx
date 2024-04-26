@@ -1,6 +1,6 @@
 "use client";
 import "./page.css";
-import NavBar from "./navbar/page";
+import NavBar from "./navbar/navbar";
 import About from "./about/page";
 import Projects from "./projects/page";
 import Photos from "./photos/page";
