@@ -16,15 +16,14 @@ export default function NavBar(): React.ReactElement {
         Kevin Liu
       </div>
       <nav className="mt-3 text-2xl flex-row space-x-5 justify-start">
-        <Link
-          className="button"
-          href="/"
+        <div
+          className="button cursor-pointer"
           onClick={() => {
             setDefaultPos(false);
           }}
         >
           About
-        </Link>
+        </div>
         <Link className="button" href="/">
           Projects
         </Link>
