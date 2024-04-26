@@ -1,5 +1,3 @@
-"use client";
-import Link from "next/link";
 import "./page.css";
 import { useState, Dispatch, SetStateAction } from "react";
 
@@ -7,7 +5,7 @@ type IProps = {
   setSelected: Dispatch<SetStateAction<string>>;
 };
 
-export default function NavBar(props: IProps): React.ReactElement {
+function NavBar(props: IProps): React.ReactElement {
   const [defaultPos, setDefaultPos] = useState(true);
   return (
     <div className={`${defaultPos ? "center" : "top"}`}>
@@ -52,3 +50,5 @@ export default function NavBar(props: IProps): React.ReactElement {
     </div>
   );
 }
+
+export default NavBar;
