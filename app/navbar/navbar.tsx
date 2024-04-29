@@ -10,7 +10,7 @@ interface IProps {
 function NavBar(props: IProps): React.ReactElement {
   const [defaultPos, setDefaultPos] = useState(true);
   return (
-    <div className={`${defaultPos ? "center" : "top"}`}>
+    <div className={`${props.selected === "home" ? "center" : "top"}`}>
       <div
         className={`text-[8rem] leading-[8rem] font-bold button cursor-pointer ${
           props.selected === "home" ? "border-b-2" : ""
