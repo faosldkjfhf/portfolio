@@ -1,6 +1,6 @@
 "use client";
 import "./page.css";
-import { useState, Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface IProps {
   selected: String;
@@ -8,7 +8,6 @@ interface IProps {
 }
 
 function NavBar(props: IProps): React.ReactElement {
-  const [defaultPos, setDefaultPos] = useState(true);
   return (
     <div className={`${props.selected === "home" ? "center" : "top"}`}>
       <div
@@ -16,7 +15,6 @@ function NavBar(props: IProps): React.ReactElement {
           props.selected === "home" ? "border-b-2" : ""
         }`}
         onClick={() => {
-          setDefaultPos(true);
           props.setSelected("home");
         }}
       >
@@ -28,7 +26,6 @@ function NavBar(props: IProps): React.ReactElement {
             props.selected === "about" ? "border-b-2" : ""
           }`}
           onClick={() => {
-            setDefaultPos(false);
             props.setSelected("about");
           }}
         >
@@ -39,7 +36,6 @@ function NavBar(props: IProps): React.ReactElement {
             props.selected === "projects" ? "border-b-2" : ""
           }`}
           onClick={() => {
-            setDefaultPos(false);
             props.setSelected("projects");
           }}
         >
@@ -50,11 +46,20 @@ function NavBar(props: IProps): React.ReactElement {
             props.selected === "photos" ? "border-b-2" : ""
           }`}
           onClick={() => {
-            setDefaultPos(false);
             props.setSelected("photos");
           }}
         >
           Photos
+        </div>
+        <div
+          className={`button cursor-pointer ${
+            props.selected === "contact" ? "border-b-2" : ""
+          }`}
+          onClick={() => {
+            props.setSelected("contact");
+          }}
+        >
+          Contact
         </div>
       </nav>
     </div>
