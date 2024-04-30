@@ -5,18 +5,23 @@ import About from "./about/about";
 import Projects from "./projects/projects";
 import Photos from "./photos/photos";
 import { useState } from "react";
-import { motion, useScroll } from "framer-motion";
 import Contact from "./contact/contact";
+import { useParallax } from "react-scroll-parallax";
 
 export default function Home(): React.ReactElement {
   const [selected, setSelected] = useState("home");
   return (
-    <main className="container mx-auto">
+    <div className="container mx-auto">
       <NavBar selected={selected} setSelected={setSelected} />
-      {selected === "about" && <About selected={selected} />}
+      {/* {selected === "about" && <About />}
       {selected === "projects" && <Projects />}
       {selected === "photos" && <Photos />}
-      {selected === "contact" && <Contact />}
-    </main>
+      {selected === "contact" && <Contact />} */}
+      <div className="spacer" />
+      <About setSelected={setSelected} />
+      <Projects />
+      <Photos />
+      <Contact />
+    </div>
   );
 }

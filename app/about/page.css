@@ -1,5 +1,17 @@
+.reverse-color {
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.reverse-color:hover {
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
+  transition-duration: 0.3s;
+}
+
 .about-center {
   height: 60vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

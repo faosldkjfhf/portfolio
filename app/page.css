@@ -3,8 +3,13 @@ body {
   @apply overflow-scroll;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   animation: gradient 30s ease infinite;
-  background-size: 400% 400%;
+  background-size: 800% 800%;
   height: 100vh;
+}
+
+.spacer {
+  width: 100%;
+  height: 25vh;
 }
 
 @keyframes gradient {

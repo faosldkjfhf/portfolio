@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 0,
+    "text": "About",
+    "selected": "about"
+  },
+  {
+    "_id": 1,
+    "text": "Projects",
+    "selected": "projects"
+  },
+  {
+    "_id": 2,
+    "text": "Photos",
+    "selected": "photos"
+  },
+  {
+    "_id": 3,
+    "text": "Contact",
+    "selected": "contact"
+  }
+]
