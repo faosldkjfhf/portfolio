@@ -1,14 +1,28 @@
 "use client";
 import "./page.css";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import categories from "./header.json";
 
 interface IProps {
-  selected: String;
+  selected: string;
   setSelected: Dispatch<SetStateAction<string>>;
 }
 
 function NavBar(props: IProps): React.ReactElement {
+  const [id, setId] = useState("home");
+  const scrollToHash = (element_id: string): void => {
+    const element = document.getElementById(element_id);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
+  useEffect(() => {
+    scrollToHash(id);
+  }, [id]);
+
   return (
     <div
       className={`${props.selected === "home" ? "center" : "top fixed"} z-10`}
@@ -18,6 +32,7 @@ function NavBar(props: IProps): React.ReactElement {
           props.selected === "home" ? "border-b-2" : ""
         }`}
         onClick={() => {
+          setId("home");
           props.setSelected("home");
         }}
       >
@@ -31,7 +46,12 @@ function NavBar(props: IProps): React.ReactElement {
               props.selected === cg.selected ? "border-b-2" : ""
             }`}
             onClick={() => {
-              props.setSelected(cg.selected);
+              if (props.selected === "home") {
+                props.setSelected(cg.selected);
+                setId(cg.selected);
+              }
+              setId(cg.selected);
+              scrollToHash(cg.selected);
             }}
           >
             {cg.text}

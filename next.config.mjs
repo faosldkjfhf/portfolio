@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  webpack(config) {
+    config.infrastructureLogging = { debug: /PackFileCache/ };
+    return config;
+  },
 };
 
 export default nextConfig;

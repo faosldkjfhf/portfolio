@@ -15,11 +15,10 @@ interface IProps {
 
 export default function Photos(props: IProps) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = props.useParallax(scrollYProgress, 300);
+  // const { scrollYProgress } = useScroll({ target: ref });
+  // const y = props.useParallax(scrollYProgress, 300);
   const isInView = useInView(ref, { amount: "all" });
   useEffect(() => {
-    console.log("photos");
     props.setSelected("photos");
   }, [isInView]);
 

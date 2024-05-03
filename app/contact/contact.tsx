@@ -18,7 +18,6 @@ export default function Contact(props: IProps): React.ReactElement {
   const y = props.useParallax(scrollYProgress, 300);
   const isInView = useInView(ref, { amount: "all" });
   useEffect(() => {
-    console.log("contact");
     props.setSelected("contact");
   }, [isInView]);
   return (
