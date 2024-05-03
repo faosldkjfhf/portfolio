@@ -36,7 +36,7 @@ function NavBar(props: IProps): React.ReactElement {
           props.setSelected("home");
         }}
       >
-        Kevin Liu
+        KEVIN LIU
       </div>
       <nav className="flex-row justify-start mt-3 space-x-5 text-2xl test">
         {categories.map((cg) => (
