@@ -1,10 +1,17 @@
+html {
+  scroll-snap-type: y mandatory;
+  /* body > div > section {
+    scroll-snap-align: start;
+  } */
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-serif;
-  @apply overflow-scroll;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   animation: gradient 30s ease infinite;
   background-size: 800% 800%;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .spacer {
@@ -22,4 +29,28 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.scroll-grid {
+  position: relative;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 100vh;
+  place-content: start;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  place-content: center;
+  position: relative;
+  scroll-snap-align: center;
+  perspective: 500px;
+}
+
+section > div {
+  position: relative;
+  max-height: 90vh;
+  margin: 0.25rem;
+  overflow: hidden;
 }

@@ -10,7 +10,9 @@ interface IProps {
 
 function NavBar(props: IProps): React.ReactElement {
   return (
-    <div className={`${props.selected === "home" ? "center" : "top fixed"}`}>
+    <div
+      className={`${props.selected === "home" ? "center" : "top fixed"} z-10`}
+    >
       <div
         className={`text-[8rem] leading-[8rem] font-bold button cursor-pointer ${
           props.selected === "home" ? "border-b-2" : ""
@@ -21,7 +23,7 @@ function NavBar(props: IProps): React.ReactElement {
       >
         Kevin Liu
       </div>
-      <nav className="flex-row justify-start mt-3 space-x-5 text-2xl">
+      <nav className="flex-row justify-start mt-3 space-x-5 text-2xl test">
         {categories.map((cg) => (
           <div
             key={cg._id}

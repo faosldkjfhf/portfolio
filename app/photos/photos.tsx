@@ -1,34 +1,33 @@
+"use client";
 import "./page.css";
-import { useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
+import { useScroll, useInView } from "framer-motion";
+import { useRef, useEffect, Dispatch, SetStateAction } from "react";
 
-export default function Photos() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+interface IProps {
+  setSelected: Dispatch<SetStateAction<string>>;
+  useParallax: any;
+}
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+interface IProps {
+  setSelected: Dispatch<SetStateAction<string>>;
+  useParallax: any;
+}
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const slides = Array.from(Array(5).keys());
+export default function Photos(props: IProps) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = props.useParallax(scrollYProgress, 300);
+  const isInView = useInView(ref, { amount: "all" });
+  useEffect(() => {
+    console.log("photos");
+    props.setSelected("photos");
+  }, [isInView]);
 
   return (
-    <main className="about-center about-slide-in">
-      <section className="embla">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
-            {slides.map((index) => (
-              <div className="embla__slide" key={index}>
-                <div className="embla__slide__number">{index + 1}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    <section id="photos">
+      <div className="about-center card" ref={ref}>
+        Photos
+      </div>
+    </section>
   );
 }

@@ -12,12 +12,15 @@
 .about-center {
   height: 60vh;
   position: relative;
+  top: 30%;
+  /* margin-bottom: 50%; */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.2);
   @apply rounded-md;
-  @apply mt-8;
+  @apply w-4/5;
+  /* @apply my-auto; */
 }
 
 .about-slide-in {
